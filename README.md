@@ -12,3 +12,9 @@
 ```shell
 ./create_certificate_for_domain.sh www.mysite.com www.mysite.com
 ```
+
+# add root CA certificate
+## Ubuntu
+```shell
+certutil -d sql:$HOME/.pki/nssdb -A -n 'mysite.com CA' -i rootCA.pem -t TCP,TCP,TCP
+```
